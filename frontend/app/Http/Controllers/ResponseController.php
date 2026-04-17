@@ -403,6 +403,16 @@ class ResponseController extends Controller
     {
         $justqiu = new Justqiu();
         $balanceInfo = $justqiu->balance($user->username, retryIfMissing: true);
+
+        if ($balanceInfo['success'] === false) {
+            $register = $justqiu->register($user->username);
+            if ($register['success']) {
+                $balanceInfo = $justqiu->balance($user->username, retryIfMissing: true);
+            } else {
+                return null;
+            }
+        }
+
         $balance = data_get($balanceInfo, 'user.balance');
 
         if (! is_numeric($balance)) {
