@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /login
+Disallow: /register/
+Disallow: /password/
+Disallow: /wallet/
+Disallow: /deposit-bank-accounts
+Disallow: /mybonus
+Disallow: /open-game/
+Disallow: /transaction/
+Disallow: /bonus/
+Disallow: /memo/
+Disallow: /deposit
+Disallow: /withdraw
+Disallow: /pga/qris
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /captcha/
+
+Allow: /
+Sitemap: /sitemap.xml
